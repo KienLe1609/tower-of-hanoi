@@ -1,5 +1,5 @@
 # tower-of-hanoi
-A joint project between kienle1609 and vbguyen165 to produce the recreation of the game Tower of Hanoi using Pygame.
+A joint project between kienle1609 and vbguyen165 to produce a recreation of the game Tower of Hanoi using Pygame.
 <br />
 Disclaimer: This program only works in Python 2.7 and below.
 <br />
