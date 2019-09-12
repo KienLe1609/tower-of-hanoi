@@ -1,4 +1,4 @@
-import pygame, sys, time
+import pygame, sys, time, os
 
 
 # The objects involved can be categorized into three classes: 
@@ -9,6 +9,7 @@ class Button:
         self.rect = self.image.get_rect()
         self.rect.topleft = (x, y)
 
+
 # Columns: the stationery objects which the Discs are moving toward
 class Column:
     def __init__(self, x):
@@ -16,6 +17,7 @@ class Column:
         self.rect = self.image.get_rect()
         self.rect.center = (x, 150)
         self.x = x
+
 
 # Discs: objects moving aroung the columns to eventually land on the last column  
 class Disc:
@@ -80,21 +82,22 @@ column1 = Column(120)
 column2 = Column(360)
 column3 = Column(600)
 
+current_path = os.path.join(os.getcwd(),'images')
 # Create the screens
-start = pygame.image.load('start menu.png').convert()
-choice = pygame.image.load('choice menu.png').convert()
-end = pygame.image.load('end screen.png').convert()
-background = pygame.image.load('main background.png').convert()
+start = pygame.image.load(os.path.join(current_path,'start menu.png')).convert()
+choice = pygame.image.load(os.path.join(current_path,'choice menu.png')).convert()
+end = pygame.image.load(os.path.join(current_path,'end screen.png')).convert()
+background = pygame.image.load(os.path.join(current_path,'main background.png')).convert()
 
 # Create the buttons to control the game
-start_button = Button('start button.png', 418, 130)
-exit_button = Button('exit button.png', 418, 209)
-three_button = Button('3 button.png', 194, 105)
-four_button = Button('4 button.png', 320, 105)
-five_button = Button('5 button.png', 446, 105)
-restart_button = Button('restart button.png', 636, 269)
-play_again_button = Button('play again button.png', 235, 143)
-main_menu_button = Button('main menu button.png', 0, 269)
+start_button = Button(os.path.join(current_path,'start button.png'), 418, 130)
+exit_button = Button(os.path.join(current_path,'exit button.png'), 418, 209)
+three_button = Button(os.path.join(current_path,'3 button.png'), 194, 105)
+four_button = Button(os.path.join(current_path,'4 button.png'), 320, 105)
+five_button = Button(os.path.join(current_path,'5 button.png'), 446, 105)
+restart_button = Button(os.path.join(current_path,'restart button.png'), 636, 269)
+play_again_button = Button(os.path.join(current_path,'play again button.png'), 235, 143)
+main_menu_button = Button(os.path.join(current_path,'main menu button.png'), 0, 269)
 
 # Make the black borders transparent
 restart_button.image.set_colorkey(black)
