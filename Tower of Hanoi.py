@@ -1,14 +1,15 @@
 import pygame, sys, time
 
 
-# The classes used for the game
+# The objects involved can be categorized into three classes: 
+# Buttons: the objects used to navigate the menu 
 class Button:
     def __init__(self, image, x, y):
         self.image = pygame.image.load(image).convert()
         self.rect = self.image.get_rect()
         self.rect.topleft = (x, y)
 
-
+# Columns: the stationery objects which the Discs are moving toward
 class Column:
     def __init__(self, x):
         self.image = pygame.Surface((20, 140))
@@ -16,7 +17,7 @@ class Column:
         self.rect.center = (x, 150)
         self.x = x
 
-
+# Discs: objects moving aroung the columns to eventually land on the last column  
 class Disc:
     def __init__(self, size, color):
         self.image = pygame.Surface((size, 20))
